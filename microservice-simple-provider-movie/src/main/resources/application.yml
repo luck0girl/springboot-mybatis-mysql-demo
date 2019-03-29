@@ -1,0 +1,25 @@
+server:
+  port: 8001
+
+spring:
+  #数据库配置
+  datasource:
+
+    url: jdbc:mysql://127.0.0.1:3306/movietest?useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT%2B8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+## mybatis配置，这是个独立的节点
+mybatis:
+  type-aliases-package: com.zxy.cloud.entity
+  mapper-locations: classpath:mappers/*.xml
+
+#日志输出配置
+logging:
+  config: classpath:log4j2.xml
+  level:
+    com:
+      zxy:
+        cloud:
+          dao: debug
